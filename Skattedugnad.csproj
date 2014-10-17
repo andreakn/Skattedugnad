@@ -211,6 +211,7 @@
     </Compile>
     <Compile Include="Migrations\MigSharpMigrator.cs" />
     <Compile Include="Migrations\Steps\M_001_Empty_1.cs" />
+    <Compile Include="Migrations\Steps\M_004_Testdata_4 - Copy.cs" />
     <Compile Include="Migrations\Steps\M_002_InitialModel_2.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Request.cs" />

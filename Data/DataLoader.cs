@@ -16,9 +16,9 @@ namespace Skattedugnad.Data
             _database = database;
         }
 
-      public IEnumerable<Request> GetRequestsForUser(int id)
+      public IEnumerable<Request> GetRequestsForUser(string id)
       {
-         return _database.Query<Request>(string.Format("SELECT * FROM Request where RequestedBy = @id where status<>{0}",RequestStatus.Viewed), new { id});
+         return _database.Query<Request>(string.Format("SELECT * FROM Request where RequestedBy = @id and status<>{0}",(int)RequestStatus.Viewed), new { id});
       } 
       public IEnumerable<Request> GetAnswerableCandidatesForUser(int id)
       {

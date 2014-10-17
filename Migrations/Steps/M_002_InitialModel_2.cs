@@ -8,19 +8,26 @@ namespace Skattedugnad.Migrations.Steps
    {
       public void Up(IDatabase db)
       {
-         db.CreateTable("User")
+
+
+         db.CreateTable("Person")
             .WithNotNullableColumn("Id", DbType.Int32).AsIdentity()
-            .WithNullableColumn("Username", DbType.AnsiString).OfSize(50);
+            .WithNullableColumn("Username", DbType.AnsiString).OfSize(50)
+            .WithNotNullableColumn("Score", DbType.Int32).HavingDefault(1)
+            .WithNotNullableColumn("IsAbusive", DbType.Boolean).HavingDefault(0);
+            
+            ;
+
          db.CreateTable("Request")
             .WithNotNullableColumn("Id", DbType.Int32).AsIdentity()
             .WithNotNullableColumn("Status", DbType.Int32)
-            .WithNotNullableColumn("RequestPriority", DbType.Int32)
-            .WithNotNullableColumn("RequestedBy", DbType.Int32)
-            .WithNotNullableColumn("RequestedDate", DbType.DateTime)
-            .WithNullableColumn("RequestInfo", DbType.AnsiString).OfSize(255)
-            .WithNullableColumn("AnsweredBy", DbType.Int32)
+            .WithNotNullableColumn("RequestPriority", DbType.Int32).HavingDefault(5)
+            .WithNotNullableColumn("RequestedBy", DbType.AnsiString).OfSize(50)
+            .WithNotNullableColumn("RequestedDate", DbType.DateTime).HavingCurrentDateTimeAsDefault()
+            .WithNotNullableColumn("RequestInfo", DbType.AnsiString).OfSize(255)
+            .WithNullableColumn("AnsweredBy", DbType.AnsiString).OfSize(50)
             .WithNullableColumn("AnsweredDate", DbType.DateTime)
-            .WithNullableColumn("AnswerInfo", DbType.AnsiString).OfSize(255)
+            .WithNullableColumn("AnswerInfo", DbType.AnsiString).OfSize(4000)
             .WithNullableColumn("AnswerAcceptable", DbType.Boolean)
             .WithNullableColumn("AnswerFlagged", DbType.Boolean)
             ;
@@ -28,7 +35,7 @@ namespace Skattedugnad.Migrations.Steps
 
       public void Down(IDatabase db)
       {
-         db.Tables["User"].Drop();
+         db.Tables["Person"].Drop();
          db.Tables["Request"].Drop();
       }
    }

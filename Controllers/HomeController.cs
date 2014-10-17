@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using Skattedugnad.Data;
 
 namespace Skattedugnad.Controllers
 {
@@ -12,8 +15,12 @@ namespace Skattedugnad.Controllers
       public ActionResult Index()
       {
          ViewBag.Message = "Dine forespørsler";
-         
-         return View();
+         var dataloader =
+            new DataLoader(new SqlDatabase(ConfigurationManager.ConnectionStrings["DB"].ConnectionString, false));
+
+         var userName = this.Request.RequestContext.HttpContext.User.Identity.Name;
+         var activeRequests = dataloader.GetRequestsForUser(userName);
+         return View(activeRequests);
       }
 
       public ActionResult About()

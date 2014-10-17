@@ -11,6 +11,13 @@ namespace Skattedugnad.Migrations.Steps
    {
       public void Up(IDatabase db)
       {
+         db.Execute(@"
+if object_id('Person') is not null
+   drop table Person
+");         db.Execute(@"
+if object_id('Request') is not null
+   drop table Request
+");
       }
 
       public void Down(IDatabase db)

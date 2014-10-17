@@ -19,11 +19,11 @@ namespace Skattedugnad.Models
       public RequestStatus Status { get; set; }
       public int RequestedPriority { get; set; }
 
-      public int RequestedBy { get; set; }
+      public string RequestedBy { get; set; }
       public DateTime RequestedDate { get; set; }
       public String RequestInfo { get; set; }
 
-      public int AnsweredBy { get; set; }
+      public string AnsweredBy { get; set; }
       public DateTime AnsweredDate { get; set; }
       public String AnswerInfo { get; set; }
 
