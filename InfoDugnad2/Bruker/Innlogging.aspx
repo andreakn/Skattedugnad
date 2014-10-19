@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Innlogging.aspx.cs" Inherits="InfoDugnad2.Account.Login" %>
+﻿<%@ Page Title="Spør for meg" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Innlogging.aspx.cs" Inherits="InfoDugnad2.Account.Login" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     
