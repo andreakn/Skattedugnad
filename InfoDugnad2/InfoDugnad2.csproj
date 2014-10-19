@@ -228,11 +228,11 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Web.Config.log</LastGenOutput>
     </Content>
-    <Content Include="Web.Config.log">
+    <None Include="Web.Config.log">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Web.Config.tt</DependentUpon>
-    </Content>
+    </None>
     <Content Include="config\tools\NConfigStitch.ttinclude" />
     <Content Include="config\tools\NConfigStitch.targets" />
     <None Include="config\input\web.dev.config" />
