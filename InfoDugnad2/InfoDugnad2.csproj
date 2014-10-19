@@ -354,6 +354,7 @@
     <Compile Include="Migrations\Steps\M_005_Complaints_5.cs" />
     <Compile Include="Migrations\Steps\M_006_Hardness_6.cs" />
     <Compile Include="Migrations\Steps\M_007_Password_7.cs" />
+    <Compile Include="Migrations\Steps\M_008_Cleanup_8.cs" />
     <Compile Include="Models\Logic.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Request.cs" />
