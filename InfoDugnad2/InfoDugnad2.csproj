@@ -236,7 +236,6 @@
     <Content Include="config\tools\NConfigStitch.ttinclude" />
     <Content Include="config\tools\NConfigStitch.targets" />
     <None Include="config\input\web.dev.config" />
-    <None Include="config\input\web.dev.local.config" />
     <None Include="config\input\web.prod.config" />
     <None Include="config\input\web.root.config" />
     <None Include="config\input\web.test.config" />
