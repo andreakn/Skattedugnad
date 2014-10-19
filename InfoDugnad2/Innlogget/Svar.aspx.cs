@@ -24,7 +24,7 @@ namespace InfoDugnad2.Innlogget
 				{
 					TextBoxAnswer.Text = Answer.AnswerInfo;
 					AnswerId.Value = ""+Answer.Id;
-					//RegisterAnswerViewed();
+					RegisterAnswerViewed();
 				}
 			}
 		}
