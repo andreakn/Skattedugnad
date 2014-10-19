@@ -41,7 +41,7 @@ namespace InfoDugnad2.Innlogget
 			if (int.TryParse(idstring, out id))
 			{
 				Answer = dataLoader.GetAnsweredRequest(id);
-				if (Answer.RequestedBy != CurrentUsername)
+				if (Answer!=null&& Answer.RequestedBy != CurrentUsername)
 				{
 					Answer = null;
 				}
