@@ -1,0 +1,10 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Target Name="NConfigStitch">
+        <ItemGroup>
+            <NConfigStitchTemplates Include=".\**\NConfigStitch.tt" />
+        </ItemGroup>
+         <Exec
+            WorkingDirectory="$(MSBuildProjectDirectory)\config\tools"
+            Command="TextTransform &quot;%(NConfigStitchTemplates.FullPath)&quot; -out &quot;%(NConfigStitchTemplates.RootDir)%(NConfigStitchTemplates.Directory)%(NConfigStitchTemplates.Filename).build.log&quot; " />
+    </Target>
+</Project>

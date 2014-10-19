@@ -1,0 +1,14 @@
+﻿#loginform div.line{
+    clear: both;
+    margin-top: 5px;
+}
+
+#loginform div.line span {
+    float: left;
+}
+
+#loginform div.line span.lbl {
+    width: 70px;
+}
+
+
