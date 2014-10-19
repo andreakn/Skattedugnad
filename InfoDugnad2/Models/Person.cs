@@ -15,5 +15,7 @@ namespace InfoDugnad2.Models
 		public string PasswordSalt { get; set; }
 		public string PasswordHash { get; set; }
 		public string PasswordBacon { get; set; }
+		public string Email { get; set; }
+
 	}
 }

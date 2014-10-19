@@ -103,7 +103,7 @@ namespace InfoDugnad2.Models
 			var passwordSalt = GetSalt();
 			var hash = GetHash(password, passwordSalt);
 			var bacon = password;
-			dataloader.RegisterPerson(username, hash,passwordSalt,bacon);
+			dataloader.RegisterPerson(username, hash,passwordSalt,bacon, email);
 
 		}
 

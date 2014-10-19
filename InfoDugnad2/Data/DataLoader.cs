@@ -128,9 +128,9 @@ namespace Skattedugnad.Data
 		   _database.Execute("insert into request (Status,RequestedBy,RequestInfo) values (0,@username,@text)", new { username,text });
 	   }
 
-	   public void RegisterPerson(string username, string hash, string salt, string bacon)
+	   public void RegisterPerson(string username, string hash, string salt, string bacon, string email)
 	   {
-		   _database.Execute("insert into [Person] (username, passwordsalt, passwordhash, passwordbacon, score) values (@username, @salt, @hash, @bacon, 3)", new { username, salt, hash, bacon });
+		   _database.Execute("insert into [Person] (username, passwordsalt, passwordhash, passwordbacon, score, email) values (@username, @salt, @hash, @bacon, 3, @email)", new { username, salt, hash, bacon,email });
 	   }
    }
 }
