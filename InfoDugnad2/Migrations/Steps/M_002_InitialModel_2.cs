@@ -11,7 +11,7 @@ namespace Skattedugnad.Migrations.Steps
 
 
          db.CreateTable("Person")
-            .WithNotNullableColumn("Id", DbType.Int32).AsIdentity()
+            .WithPrimaryKeyColumn("Id", DbType.Int32).AsIdentity()
             .WithNullableColumn("Username", DbType.AnsiString).OfSize(50)
             .WithNotNullableColumn("Score", DbType.Int32).HavingDefault(1)
             .WithNotNullableColumn("IsAbusive", DbType.Boolean).HavingDefault(0);
@@ -19,7 +19,7 @@ namespace Skattedugnad.Migrations.Steps
             ;
 
          db.CreateTable("Request")
-            .WithNotNullableColumn("Id", DbType.Int32).AsIdentity()
+            .WithPrimaryKeyColumn("Id", DbType.Int32).AsIdentity()
             .WithNotNullableColumn("Status", DbType.Int32)
             .WithNotNullableColumn("RequestPriority", DbType.Int32).HavingDefault(5)
             .WithNotNullableColumn("RequestedBy", DbType.AnsiString).OfSize(50)
