@@ -3,7 +3,7 @@
 <#@ include file="Config\Tools\NConfigStitch.ttinclude"  #><#
 var setup = new Dictionary<string, string[]>();
 string inputFilesRelativeRootPaths = @"\";
-string outputFilesRelativeRootPath = @"\";
+string outputFilesRelativeRootPath = @"\"; 
 
 
 //////////////////////////////////////////////////////////////
@@ -19,7 +19,7 @@ string outputFilesRelativeRootPath = @"\";
 // make your modifications below here 
 //////////////////////////////////////////////////////////////
 
-inputFilesRelativeRootPaths = @"\config\input"; 
+inputFilesRelativeRootPaths = @"\config\input";  
 
 //local configuration. 
 //Make sure that you don't check the resulting web.config file into source control as this will result in merge conflicts with other developers

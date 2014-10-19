@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="NConfigStitch; Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -224,14 +224,14 @@
     <Content Include="Innlogget\StillSporsmal.aspx" />
     <Content Include="Innlogget\Svar.aspx" />
     <Content Include="packages.config" />
-    <Content Include="NConfigStitch.tt">
+    <Content Include="Web.Config.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NConfigStitch.log</LastGenOutput>
+      <LastGenOutput>Web.Config.log</LastGenOutput>
     </Content>
-    <Content Include="NConfigStitch.log">
+    <Content Include="Web.Config.log">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NConfigStitch.tt</DependentUpon>
+      <DependentUpon>Web.Config.tt</DependentUpon>
     </Content>
     <Content Include="config\tools\NConfigStitch.ttinclude" />
     <Content Include="config\tools\NConfigStitch.targets" />
@@ -450,6 +450,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(MSBuildProjectDirectory)\config\tools\NConfigStitch.targets" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
@@ -474,12 +475,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
-  <Target Name="NConfigStitch" BeforeTargets="Build">
-    <ItemGroup>
-      <NConfigStitchTemplates Include=".\**\NConfigStitch.tt" />
-    </ItemGroup>
-    <Exec WorkingDirectory="$(MSBuildProjectDirectory)\config\tools" Command="TextTransform &quot;%(NConfigStitchTemplates.FullPath)&quot; -out &quot;%(NConfigStitchTemplates.RootDir)%(NConfigStitchTemplates.Directory)%(NConfigStitchTemplates.Filename).build.log&quot; " />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
