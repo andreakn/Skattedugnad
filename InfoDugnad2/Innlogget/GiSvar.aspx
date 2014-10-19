@@ -10,7 +10,7 @@
         <p>Svar:<br/>
         <asp:HiddenField runat="server" ID="SessionCookie"/>
           <asp:TextBox runat="server" ID="TextBoxAnswerInfo" TextMode="MultiLine" Columns="60" Rows="10"></asp:TextBox><br/>
-        <asp:Button runat="server" Text="Svar avgitt" OnClick="RegisterAnswer" CssClass="btn btn-primary"/></p>
+        <asp:Button runat="server" Text="Send inn" OnClick="RegisterAnswer" CssClass="btn btn-primary"/></p>
         <p>
             Eller:<br/>
         <asp:Button runat="server" CssClass="btn " Text="Fant ikke svar" OnClick="RegisterCantAnswer"/>

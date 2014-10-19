@@ -49,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">Spørsmålsdugnad</a>
+                    <a class="navbar-brand" href="/">Spør for meg</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -61,7 +61,7 @@
                             </AnonymousTemplate>
                             <LoggedInTemplate>
                                 <li>
-                                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Logg ut" LogoutPageUrl="~/" />
+                                    <a id="logoutLink" runat="server" href="~/LoggUt">Logg ut</a>
                                 </li>
                             </LoggedInTemplate>
                         </asp:LoginView>
